@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}Пользователь{% endblock %}
+{% block heading %}Пользователь {{ target.email }}{% endblock %}
+{% block content %}
+{% include 'management_panel/_tabs.html' with tab='users' %}
+<form method="post" class="card p-4" style="max-width: 640px">{% csrf_token %}
+  {% for field in form %}{% include 'includes/form_field.html' %}{% endfor %}
+  <div class="d-flex gap-2"><button class="btn btn-primary">Сохранить</button><a class="btn btn-outline-secondary" href="{% url 'management_panel:users' %}">Отмена</a></div>
+</form>
+{% endblock %}

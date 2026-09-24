@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block title %}{{ config.title }}{% endblock %}
+{% block heading %}{% if instance %}Редактирование записи{% else %}Новая запись{% endif %}{% endblock %}
+{% block subheading %}{{ config.title }}{% endblock %}
+{% block content %}
+{% include 'management_panel/_tabs.html' with tab=kind %}
+<form method="post" class="card p-4" style="max-width: 640px">{% csrf_token %}
+  {% for field in form %}{% include 'includes/form_field.html' %}{% endfor %}
+  <div class="d-flex gap-2"><button class="btn btn-primary">Сохранить</button><a class="btn btn-outline-secondary" href="{% url 'management_panel:reference_list' kind %}">Отмена</a></div>
+</form>
+{% endblock %}

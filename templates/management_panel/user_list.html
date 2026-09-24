@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}Пользователи{% endblock %}
+{% block heading %}Панель администратора{% endblock %}
+{% block subheading %}Управление пользователями и ролями{% endblock %}
+{% block content %}
+{% include 'management_panel/_tabs.html' with tab='users' %}
+<form method="get" class="d-flex gap-2 mb-3" style="max-width: 480px">
+  <input class="form-control" name="q" value="{{ query }}" placeholder="Email или имя"><button class="btn btn-outline-primary">Найти</button></form>
+<div class="card"><div class="table-responsive"><table class="table align-middle mb-0">
+  <thead><tr><th>Email</th><th>Имя</th><th>Роль</th><th>Подписок</th><th>Статус</th><th>Регистрация</th><th></th></tr></thead><tbody>
+  {% for u in users %}
+  <tr>
+    <td>{{ u.email }}</td><td>{{ u.get_full_name|default:"—" }}</td>
+    <td><span class="badge {% if u.role == 'admin' %}bg-primary{% else %}bg-secondary{% endif %}">{{ u.get_role_display }}</span></td>
+    <td>{{ u.subs }}</td>
+    <td>{% if u.is_active %}<span class="badge badge-status-active">активен</span>{% else %}<span class="badge badge-status-cancelled">заблокирован</span>{% endif %}</td>
+    <td>{{ u.date_joined|date:"d.m.Y" }}</td>
+    <td class="text-end text-nowrap">
+      <a class="btn btn-sm btn-outline-secondary" href="{% url 'management_panel:user_update' u.pk %}"><i class="bi bi-pencil"></i></a>
+      {% if u != user %}<form method="post" action="{% url 'management_panel:user_toggle' u.pk %}" class="d-inline">{% csrf_token %}
+        <button class="btn btn-sm {% if u.is_active %}btn-outline-danger{% else %}btn-outline-success{% endif %}">{% if u.is_active %}<i class="bi bi-lock"></i>{% else %}<i class="bi bi-unlock"></i>{% endif %}</button></form>{% endif %}
+    </td>
+  </tr>
+  {% endfor %}
+</tbody></table></div></div>
+{% endblock %}

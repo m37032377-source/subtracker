@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% block title %}{{ config.title }}{% endblock %}
+{% block heading %}Панель администратора{% endblock %}
+{% block subheading %}Справочник: {{ config.title|lower }}{% endblock %}
+{% block actions %}<a class="btn btn-primary" href="{% url 'management_panel:reference_create' kind %}"><i class="bi bi-plus-lg"></i> Добавить</a>{% endblock %}
+{% block content %}
+{% include 'management_panel/_tabs.html' with tab=kind %}
+<div class="card"><table class="table align-middle mb-0">
+  <thead><tr>{% for h in config.headers %}<th>{{ h }}</th>{% endfor %}<th></th></tr></thead><tbody>
+  {% for obj, values in rows %}
+  <tr>{% for v in values %}<td>{% if v|stringformat:"s"|slice:":1" == "#" %}<span class="d-inline-block rounded me-2" style="width:14px;height:14px;background:{{ v }}"></span>{% endif %}{{ v }}</td>{% endfor %}
+    <td class="text-end text-nowrap">
+      <a class="btn btn-sm btn-outline-secondary" href="{% url 'management_panel:reference_update' kind obj.pk %}"><i class="bi bi-pencil"></i></a>
+      <form method="post" action="{% url 'management_panel:reference_delete' kind obj.pk %}" class="d-inline" onsubmit="return confirm('Удалить запись?')">{% csrf_token %}<button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button></form>
+    </td></tr>
+  {% endfor %}
+</tbody></table></div>
+{% endblock %}
