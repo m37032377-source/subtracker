@@ -1,0 +1,246 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="930" viewBox="0 0 1500 930" font-family="'Segoe UI', 'DejaVu Sans', Arial, sans-serif">
+<rect width="100%" height="100%" fill="#ffffff"/>
+<path d="M400 173.0 L570 173.0" fill="none" stroke="#374151" stroke-width="1.6"/>
+<line x1="410" y1="165.0" x2="410" y2="181.0" stroke="#374151" stroke-width="1.6"/>
+<line x1="416" y1="165.0" x2="416" y2="181.0" stroke="#374151" stroke-width="1.6"/>
+<line x1="554" y1="173.0" x2="570" y2="164.0" stroke="#374151" stroke-width="1.6"/>
+<line x1="554" y1="173.0" x2="570" y2="182.0" stroke="#374151" stroke-width="1.6"/>
+<circle cx="546" cy="173.0" r="5" fill="#fff" stroke="#374151" stroke-width="1.6"/>
+<text x="515" y="165.0" text-anchor="middle" font-size="12" fill="#4b5563" font-style="italic">владеет</text>
+<path d="M400 173.0 L460 173.0 L460 50 L1470 50 L1470 203.0 L1430 203.0" fill="none" stroke="#374151" stroke-width="1.6"/>
+<line x1="1446" y1="203.0" x2="1430" y2="194.0" stroke="#374151" stroke-width="1.6"/>
+<line x1="1446" y1="203.0" x2="1430" y2="212.0" stroke="#374151" stroke-width="1.6"/>
+<circle cx="1454" cy="203.0" r="5" fill="#fff" stroke="#374151" stroke-width="1.6"/>
+<text x="960" y="42" text-anchor="middle" font-size="12" fill="#4b5563" font-style="italic">получает уведомления</text>
+<path d="M70 573.0 L20 573.0 L20 353.0 L70 353.0" fill="none" stroke="#374151" stroke-width="1.6"/>
+<line x1="60" y1="565.0" x2="60" y2="581.0" stroke="#374151" stroke-width="1.6"/>
+<circle cx="48" cy="573.0" r="5" fill="#fff" stroke="#374151" stroke-width="1.6"/>
+<line x1="54" y1="353.0" x2="70" y2="344.0" stroke="#374151" stroke-width="1.6"/>
+<line x1="54" y1="353.0" x2="70" y2="362.0" stroke="#374151" stroke-width="1.6"/>
+<circle cx="46" cy="353.0" r="5" fill="#fff" stroke="#374151" stroke-width="1.6"/>
+<path d="M400 573.0 L500 573.0 L500 203.0 L570 203.0" fill="none" stroke="#374151" stroke-width="1.6"/>
+<line x1="410" y1="565.0" x2="410" y2="581.0" stroke="#374151" stroke-width="1.6"/>
+<line x1="416" y1="565.0" x2="416" y2="581.0" stroke="#374151" stroke-width="1.6"/>
+<line x1="554" y1="203.0" x2="570" y2="194.0" stroke="#374151" stroke-width="1.6"/>
+<line x1="554" y1="203.0" x2="570" y2="212.0" stroke="#374151" stroke-width="1.6"/>
+<circle cx="546" cy="203.0" r="5" fill="#fff" stroke="#374151" stroke-width="1.6"/>
+<path d="M20 573.0 L20 900 L1450 900 L1450 563.0 L1430 563.0" fill="none" stroke="#374151" stroke-width="1.6"/>
+<line x1="1446" y1="563.0" x2="1430" y2="554.0" stroke="#374151" stroke-width="1.6"/>
+<line x1="1446" y1="563.0" x2="1430" y2="572.0" stroke="#374151" stroke-width="1.6"/>
+<circle cx="1454" cy="563.0" r="5" fill="#fff" stroke="#374151" stroke-width="1.6"/>
+<text x="760" y="892" text-anchor="middle" font-size="12" fill="#4b5563" font-style="italic">валюта платежа</text>
+<path d="M570 713.0 L530 713.0 L530 233.0 L570 233.0" fill="none" stroke="#374151" stroke-width="1.6"/>
+<line x1="560" y1="705.0" x2="560" y2="721.0" stroke="#374151" stroke-width="1.6"/>
+<line x1="554" y1="705.0" x2="554" y2="721.0" stroke="#374151" stroke-width="1.6"/>
+<line x1="554" y1="233.0" x2="570" y2="224.0" stroke="#374151" stroke-width="1.6"/>
+<line x1="554" y1="233.0" x2="570" y2="242.0" stroke="#374151" stroke-width="1.6"/>
+<circle cx="546" cy="233.0" r="5" fill="#fff" stroke="#374151" stroke-width="1.6"/>
+<path d="M910 143.0 L990 143.0 L990 173.0 L1100 173.0" fill="none" stroke="#374151" stroke-width="1.6"/>
+<path d="M990 143.0 L990 533.0 L1100 533.0" fill="none" stroke="#374151" stroke-width="1.6"/>
+<line x1="920" y1="135.0" x2="920" y2="151.0" stroke="#374151" stroke-width="1.6"/>
+<line x1="926" y1="135.0" x2="926" y2="151.0" stroke="#374151" stroke-width="1.6"/>
+<line x1="1084" y1="173.0" x2="1100" y2="164.0" stroke="#374151" stroke-width="1.6"/>
+<line x1="1084" y1="173.0" x2="1100" y2="182.0" stroke="#374151" stroke-width="1.6"/>
+<circle cx="1076" cy="173.0" r="5" fill="#fff" stroke="#374151" stroke-width="1.6"/>
+<line x1="1084" y1="533.0" x2="1100" y2="524.0" stroke="#374151" stroke-width="1.6"/>
+<line x1="1084" y1="533.0" x2="1100" y2="542.0" stroke="#374151" stroke-width="1.6"/>
+<circle cx="1076" cy="533.0" r="5" fill="#fff" stroke="#374151" stroke-width="1.6"/>
+<text x="1045" y="525.0" text-anchor="middle" font-size="12" fill="#4b5563" font-style="italic">история</text>
+<rect x="70" y="120" width="330" height="338" rx="6" fill="#ffffff" stroke="#6c8ebf" stroke-width="1.5"/>
+<path d="M70 158 V126 Q70 120 76 120 H394 Q400 120 400 126 V158 Z" fill="#dae8fc" stroke="#6c8ebf" stroke-width="1.5"/>
+<text x="235.0" y="145" text-anchor="middle" font-weight="700" font-size="17">users</text>
+<line x1="114" y1="158" x2="114" y2="458" stroke="#6c8ebf" stroke-width="1"/>
+<text x="92" y="178" text-anchor="middle" font-size="13" font-weight="700" fill="#b45309">PK</text>
+<text x="124" y="178" font-size="14" font-weight="700" text-decoration="underline">id</text>
+<text x="390" y="178" text-anchor="end" font-size="12" fill="#6b7280">BIGINT</text>
+<line x1="70" y1="188" x2="400" y2="188" stroke="#e5e7eb" stroke-width="1"/>
+<text x="124" y="208" font-size="14" font-weight="400">email</text>
+<text x="390" y="208" text-anchor="end" font-size="12" fill="#6b7280">VARCHAR(254)</text>
+<line x1="70" y1="218" x2="400" y2="218" stroke="#e5e7eb" stroke-width="1"/>
+<text x="124" y="238" font-size="14" font-weight="400">password</text>
+<text x="390" y="238" text-anchor="end" font-size="12" fill="#6b7280">VARCHAR(128)</text>
+<line x1="70" y1="248" x2="400" y2="248" stroke="#e5e7eb" stroke-width="1"/>
+<text x="124" y="268" font-size="14" font-weight="400">first_name</text>
+<text x="390" y="268" text-anchor="end" font-size="12" fill="#6b7280">VARCHAR(150)</text>
+<line x1="70" y1="278" x2="400" y2="278" stroke="#e5e7eb" stroke-width="1"/>
+<text x="124" y="298" font-size="14" font-weight="400">last_name</text>
+<text x="390" y="298" text-anchor="end" font-size="12" fill="#6b7280">VARCHAR(150)</text>
+<line x1="70" y1="308" x2="400" y2="308" stroke="#e5e7eb" stroke-width="1"/>
+<text x="124" y="328" font-size="14" font-weight="400">role</text>
+<text x="390" y="328" text-anchor="end" font-size="12" fill="#6b7280">VARCHAR(10)</text>
+<line x1="70" y1="338" x2="400" y2="338" stroke="#e5e7eb" stroke-width="1"/>
+<text x="92" y="358" text-anchor="middle" font-size="13" font-weight="700" fill="#1d4ed8">FK</text>
+<text x="124" y="358" font-size="14" font-weight="400">default_currency_id</text>
+<text x="390" y="358" text-anchor="end" font-size="12" fill="#6b7280">BIGINT</text>
+<line x1="70" y1="368" x2="400" y2="368" stroke="#e5e7eb" stroke-width="1"/>
+<text x="124" y="388" font-size="14" font-weight="400">monthly_budget</text>
+<text x="390" y="388" text-anchor="end" font-size="12" fill="#6b7280">DECIMAL(10,2)</text>
+<line x1="70" y1="398" x2="400" y2="398" stroke="#e5e7eb" stroke-width="1"/>
+<text x="124" y="418" font-size="14" font-weight="400">is_active</text>
+<text x="390" y="418" text-anchor="end" font-size="12" fill="#6b7280">BOOLEAN</text>
+<line x1="70" y1="428" x2="400" y2="428" stroke="#e5e7eb" stroke-width="1"/>
+<text x="124" y="448" font-size="14" font-weight="400">date_joined</text>
+<text x="390" y="448" text-anchor="end" font-size="12" fill="#6b7280">DATETIME</text>
+<rect x="70" y="520" width="330" height="218" rx="6" fill="#ffffff" stroke="#82b366" stroke-width="1.5"/>
+<path d="M70 558 V526 Q70 520 76 520 H394 Q400 520 400 526 V558 Z" fill="#d5e8d4" stroke="#82b366" stroke-width="1.5"/>
+<text x="235.0" y="545" text-anchor="middle" font-weight="700" font-size="17">currencies</text>
+<line x1="114" y1="558" x2="114" y2="738" stroke="#82b366" stroke-width="1"/>
+<text x="92" y="578" text-anchor="middle" font-size="13" font-weight="700" fill="#b45309">PK</text>
+<text x="124" y="578" font-size="14" font-weight="700" text-decoration="underline">id</text>
+<text x="390" y="578" text-anchor="end" font-size="12" fill="#6b7280">BIGINT</text>
+<line x1="70" y1="588" x2="400" y2="588" stroke="#e5e7eb" stroke-width="1"/>
+<text x="124" y="608" font-size="14" font-weight="400">code</text>
+<text x="390" y="608" text-anchor="end" font-size="12" fill="#6b7280">VARCHAR(3)</text>
+<line x1="70" y1="618" x2="400" y2="618" stroke="#e5e7eb" stroke-width="1"/>
+<text x="124" y="638" font-size="14" font-weight="400">name</text>
+<text x="390" y="638" text-anchor="end" font-size="12" fill="#6b7280">VARCHAR(50)</text>
+<line x1="70" y1="648" x2="400" y2="648" stroke="#e5e7eb" stroke-width="1"/>
+<text x="124" y="668" font-size="14" font-weight="400">symbol</text>
+<text x="390" y="668" text-anchor="end" font-size="12" fill="#6b7280">VARCHAR(5)</text>
+<line x1="70" y1="678" x2="400" y2="678" stroke="#e5e7eb" stroke-width="1"/>
+<text x="124" y="698" font-size="14" font-weight="400">rate_to_rub</text>
+<text x="390" y="698" text-anchor="end" font-size="12" fill="#6b7280">DECIMAL(12,4)</text>
+<line x1="70" y1="708" x2="400" y2="708" stroke="#e5e7eb" stroke-width="1"/>
+<text x="124" y="728" font-size="14" font-weight="400">updated_at</text>
+<text x="390" y="728" text-anchor="end" font-size="12" fill="#6b7280">DATETIME</text>
+<rect x="570" y="90" width="340" height="518" rx="6" fill="#ffffff" stroke="#d79b00" stroke-width="1.5"/>
+<path d="M570 128 V96 Q570 90 576 90 H904 Q910 90 910 96 V128 Z" fill="#ffe6cc" stroke="#d79b00" stroke-width="1.5"/>
+<text x="740.0" y="115" text-anchor="middle" font-weight="700" font-size="17">subscriptions</text>
+<line x1="614" y1="128" x2="614" y2="608" stroke="#d79b00" stroke-width="1"/>
+<text x="592" y="148" text-anchor="middle" font-size="13" font-weight="700" fill="#b45309">PK</text>
+<text x="624" y="148" font-size="14" font-weight="700" text-decoration="underline">id</text>
+<text x="900" y="148" text-anchor="end" font-size="12" fill="#6b7280">BIGINT</text>
+<line x1="570" y1="158" x2="910" y2="158" stroke="#e5e7eb" stroke-width="1"/>
+<text x="592" y="178" text-anchor="middle" font-size="13" font-weight="700" fill="#1d4ed8">FK</text>
+<text x="624" y="178" font-size="14" font-weight="400">user_id</text>
+<text x="900" y="178" text-anchor="end" font-size="12" fill="#6b7280">BIGINT</text>
+<line x1="570" y1="188" x2="910" y2="188" stroke="#e5e7eb" stroke-width="1"/>
+<text x="592" y="208" text-anchor="middle" font-size="13" font-weight="700" fill="#1d4ed8">FK</text>
+<text x="624" y="208" font-size="14" font-weight="400">currency_id</text>
+<text x="900" y="208" text-anchor="end" font-size="12" fill="#6b7280">BIGINT</text>
+<line x1="570" y1="218" x2="910" y2="218" stroke="#e5e7eb" stroke-width="1"/>
+<text x="592" y="238" text-anchor="middle" font-size="13" font-weight="700" fill="#1d4ed8">FK</text>
+<text x="624" y="238" font-size="14" font-weight="400">category_id</text>
+<text x="900" y="238" text-anchor="end" font-size="12" fill="#6b7280">BIGINT</text>
+<line x1="570" y1="248" x2="910" y2="248" stroke="#e5e7eb" stroke-width="1"/>
+<text x="624" y="268" font-size="14" font-weight="400">name</text>
+<text x="900" y="268" text-anchor="end" font-size="12" fill="#6b7280">VARCHAR(100)</text>
+<line x1="570" y1="278" x2="910" y2="278" stroke="#e5e7eb" stroke-width="1"/>
+<text x="624" y="298" font-size="14" font-weight="400">price</text>
+<text x="900" y="298" text-anchor="end" font-size="12" fill="#6b7280">DECIMAL(10,2)</text>
+<line x1="570" y1="308" x2="910" y2="308" stroke="#e5e7eb" stroke-width="1"/>
+<text x="624" y="328" font-size="14" font-weight="400">billing_period</text>
+<text x="900" y="328" text-anchor="end" font-size="12" fill="#6b7280">VARCHAR(10)</text>
+<line x1="570" y1="338" x2="910" y2="338" stroke="#e5e7eb" stroke-width="1"/>
+<text x="624" y="358" font-size="14" font-weight="400">status</text>
+<text x="900" y="358" text-anchor="end" font-size="12" fill="#6b7280">VARCHAR(10)</text>
+<line x1="570" y1="368" x2="910" y2="368" stroke="#e5e7eb" stroke-width="1"/>
+<text x="624" y="388" font-size="14" font-weight="400">start_date</text>
+<text x="900" y="388" text-anchor="end" font-size="12" fill="#6b7280">DATE</text>
+<line x1="570" y1="398" x2="910" y2="398" stroke="#e5e7eb" stroke-width="1"/>
+<text x="624" y="418" font-size="14" font-weight="400">next_payment_date</text>
+<text x="900" y="418" text-anchor="end" font-size="12" fill="#6b7280">DATE</text>
+<line x1="570" y1="428" x2="910" y2="428" stroke="#e5e7eb" stroke-width="1"/>
+<text x="624" y="448" font-size="14" font-weight="400">trial_end_date</text>
+<text x="900" y="448" text-anchor="end" font-size="12" fill="#6b7280">DATE</text>
+<line x1="570" y1="458" x2="910" y2="458" stroke="#e5e7eb" stroke-width="1"/>
+<text x="624" y="478" font-size="14" font-weight="400">remind_days_before</text>
+<text x="900" y="478" text-anchor="end" font-size="12" fill="#6b7280">SMALLINT</text>
+<line x1="570" y1="488" x2="910" y2="488" stroke="#e5e7eb" stroke-width="1"/>
+<text x="624" y="508" font-size="14" font-weight="400">website</text>
+<text x="900" y="508" text-anchor="end" font-size="12" fill="#6b7280">VARCHAR(200)</text>
+<line x1="570" y1="518" x2="910" y2="518" stroke="#e5e7eb" stroke-width="1"/>
+<text x="624" y="538" font-size="14" font-weight="400">notes</text>
+<text x="900" y="538" text-anchor="end" font-size="12" fill="#6b7280">TEXT</text>
+<line x1="570" y1="548" x2="910" y2="548" stroke="#e5e7eb" stroke-width="1"/>
+<text x="624" y="568" font-size="14" font-weight="400">created_at</text>
+<text x="900" y="568" text-anchor="end" font-size="12" fill="#6b7280">DATETIME</text>
+<line x1="570" y1="578" x2="910" y2="578" stroke="#e5e7eb" stroke-width="1"/>
+<text x="624" y="598" font-size="14" font-weight="400">updated_at</text>
+<text x="900" y="598" text-anchor="end" font-size="12" fill="#6b7280">DATETIME</text>
+<rect x="570" y="660" width="340" height="188" rx="6" fill="#ffffff" stroke="#82b366" stroke-width="1.5"/>
+<path d="M570 698 V666 Q570 660 576 660 H904 Q910 660 910 666 V698 Z" fill="#d5e8d4" stroke="#82b366" stroke-width="1.5"/>
+<text x="740.0" y="685" text-anchor="middle" font-weight="700" font-size="17">categories</text>
+<line x1="614" y1="698" x2="614" y2="848" stroke="#82b366" stroke-width="1"/>
+<text x="592" y="718" text-anchor="middle" font-size="13" font-weight="700" fill="#b45309">PK</text>
+<text x="624" y="718" font-size="14" font-weight="700" text-decoration="underline">id</text>
+<text x="900" y="718" text-anchor="end" font-size="12" fill="#6b7280">BIGINT</text>
+<line x1="570" y1="728" x2="910" y2="728" stroke="#e5e7eb" stroke-width="1"/>
+<text x="624" y="748" font-size="14" font-weight="400">name</text>
+<text x="900" y="748" text-anchor="end" font-size="12" fill="#6b7280">VARCHAR(60)</text>
+<line x1="570" y1="758" x2="910" y2="758" stroke="#e5e7eb" stroke-width="1"/>
+<text x="624" y="778" font-size="14" font-weight="400">description</text>
+<text x="900" y="778" text-anchor="end" font-size="12" fill="#6b7280">VARCHAR(255)</text>
+<line x1="570" y1="788" x2="910" y2="788" stroke="#e5e7eb" stroke-width="1"/>
+<text x="624" y="808" font-size="14" font-weight="400">color</text>
+<text x="900" y="808" text-anchor="end" font-size="12" fill="#6b7280">VARCHAR(7)</text>
+<line x1="570" y1="818" x2="910" y2="818" stroke="#e5e7eb" stroke-width="1"/>
+<text x="624" y="838" font-size="14" font-weight="400">icon</text>
+<text x="900" y="838" text-anchor="end" font-size="12" fill="#6b7280">VARCHAR(40)</text>
+<rect x="1100" y="90" width="330" height="308" rx="6" fill="#ffffff" stroke="#9673a6" stroke-width="1.5"/>
+<path d="M1100 128 V96 Q1100 90 1106 90 H1424 Q1430 90 1430 96 V128 Z" fill="#e1d5e7" stroke="#9673a6" stroke-width="1.5"/>
+<text x="1265.0" y="115" text-anchor="middle" font-weight="700" font-size="17">notifications</text>
+<line x1="1144" y1="128" x2="1144" y2="398" stroke="#9673a6" stroke-width="1"/>
+<text x="1122" y="148" text-anchor="middle" font-size="13" font-weight="700" fill="#b45309">PK</text>
+<text x="1154" y="148" font-size="14" font-weight="700" text-decoration="underline">id</text>
+<text x="1420" y="148" text-anchor="end" font-size="12" fill="#6b7280">BIGINT</text>
+<line x1="1100" y1="158" x2="1430" y2="158" stroke="#e5e7eb" stroke-width="1"/>
+<text x="1122" y="178" text-anchor="middle" font-size="13" font-weight="700" fill="#1d4ed8">FK</text>
+<text x="1154" y="178" font-size="14" font-weight="400">subscription_id</text>
+<text x="1420" y="178" text-anchor="end" font-size="12" fill="#6b7280">BIGINT</text>
+<line x1="1100" y1="188" x2="1430" y2="188" stroke="#e5e7eb" stroke-width="1"/>
+<text x="1122" y="208" text-anchor="middle" font-size="13" font-weight="700" fill="#1d4ed8">FK</text>
+<text x="1154" y="208" font-size="14" font-weight="400">user_id</text>
+<text x="1420" y="208" text-anchor="end" font-size="12" fill="#6b7280">BIGINT</text>
+<line x1="1100" y1="218" x2="1430" y2="218" stroke="#e5e7eb" stroke-width="1"/>
+<text x="1154" y="238" font-size="14" font-weight="400">notification_type</text>
+<text x="1420" y="238" text-anchor="end" font-size="12" fill="#6b7280">VARCHAR(12)</text>
+<line x1="1100" y1="248" x2="1430" y2="248" stroke="#e5e7eb" stroke-width="1"/>
+<text x="1154" y="268" font-size="14" font-weight="400">title</text>
+<text x="1420" y="268" text-anchor="end" font-size="12" fill="#6b7280">VARCHAR(150)</text>
+<line x1="1100" y1="278" x2="1430" y2="278" stroke="#e5e7eb" stroke-width="1"/>
+<text x="1154" y="298" font-size="14" font-weight="400">message</text>
+<text x="1420" y="298" text-anchor="end" font-size="12" fill="#6b7280">TEXT</text>
+<line x1="1100" y1="308" x2="1430" y2="308" stroke="#e5e7eb" stroke-width="1"/>
+<text x="1154" y="328" font-size="14" font-weight="400">event_date</text>
+<text x="1420" y="328" text-anchor="end" font-size="12" fill="#6b7280">DATE</text>
+<line x1="1100" y1="338" x2="1430" y2="338" stroke="#e5e7eb" stroke-width="1"/>
+<text x="1154" y="358" font-size="14" font-weight="400">is_read</text>
+<text x="1420" y="358" text-anchor="end" font-size="12" fill="#6b7280">BOOLEAN</text>
+<line x1="1100" y1="368" x2="1430" y2="368" stroke="#e5e7eb" stroke-width="1"/>
+<text x="1154" y="388" font-size="14" font-weight="400">created_at</text>
+<text x="1420" y="388" text-anchor="end" font-size="12" fill="#6b7280">DATETIME</text>
+<rect x="1100" y="450" width="330" height="308" rx="6" fill="#ffffff" stroke="#b85450" stroke-width="1.5"/>
+<path d="M1100 488 V456 Q1100 450 1106 450 H1424 Q1430 450 1430 456 V488 Z" fill="#f8cecc" stroke="#b85450" stroke-width="1.5"/>
+<text x="1265.0" y="475" text-anchor="middle" font-weight="700" font-size="17">payments</text>
+<line x1="1144" y1="488" x2="1144" y2="758" stroke="#b85450" stroke-width="1"/>
+<text x="1122" y="508" text-anchor="middle" font-size="13" font-weight="700" fill="#b45309">PK</text>
+<text x="1154" y="508" font-size="14" font-weight="700" text-decoration="underline">id</text>
+<text x="1420" y="508" text-anchor="end" font-size="12" fill="#6b7280">BIGINT</text>
+<line x1="1100" y1="518" x2="1430" y2="518" stroke="#e5e7eb" stroke-width="1"/>
+<text x="1122" y="538" text-anchor="middle" font-size="13" font-weight="700" fill="#1d4ed8">FK</text>
+<text x="1154" y="538" font-size="14" font-weight="400">subscription_id</text>
+<text x="1420" y="538" text-anchor="end" font-size="12" fill="#6b7280">BIGINT</text>
+<line x1="1100" y1="548" x2="1430" y2="548" stroke="#e5e7eb" stroke-width="1"/>
+<text x="1122" y="568" text-anchor="middle" font-size="13" font-weight="700" fill="#1d4ed8">FK</text>
+<text x="1154" y="568" font-size="14" font-weight="400">currency_id</text>
+<text x="1420" y="568" text-anchor="end" font-size="12" fill="#6b7280">BIGINT</text>
+<line x1="1100" y1="578" x2="1430" y2="578" stroke="#e5e7eb" stroke-width="1"/>
+<text x="1154" y="598" font-size="14" font-weight="400">amount</text>
+<text x="1420" y="598" text-anchor="end" font-size="12" fill="#6b7280">DECIMAL(10,2)</text>
+<line x1="1100" y1="608" x2="1430" y2="608" stroke="#e5e7eb" stroke-width="1"/>
+<text x="1154" y="628" font-size="14" font-weight="400">amount_rub</text>
+<text x="1420" y="628" text-anchor="end" font-size="12" fill="#6b7280">DECIMAL(12,2)</text>
+<line x1="1100" y1="638" x2="1430" y2="638" stroke="#e5e7eb" stroke-width="1"/>
+<text x="1154" y="658" font-size="14" font-weight="400">paid_at</text>
+<text x="1420" y="658" text-anchor="end" font-size="12" fill="#6b7280">DATE</text>
+<line x1="1100" y1="668" x2="1430" y2="668" stroke="#e5e7eb" stroke-width="1"/>
+<text x="1154" y="688" font-size="14" font-weight="400">status</text>
+<text x="1420" y="688" text-anchor="end" font-size="12" fill="#6b7280">VARCHAR(10)</text>
+<line x1="1100" y1="698" x2="1430" y2="698" stroke="#e5e7eb" stroke-width="1"/>
+<text x="1154" y="718" font-size="14" font-weight="400">comment</text>
+<text x="1420" y="718" text-anchor="end" font-size="12" fill="#6b7280">VARCHAR(255)</text>
+<line x1="1100" y1="728" x2="1430" y2="728" stroke="#e5e7eb" stroke-width="1"/>
+<text x="1154" y="748" font-size="14" font-weight="400">created_at</text>
+<text x="1420" y="748" text-anchor="end" font-size="12" fill="#6b7280">DATETIME</text>
+</svg>

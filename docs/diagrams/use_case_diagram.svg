@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1000" viewBox="0 0 1500 1000" font-family="'Segoe UI', 'DejaVu Sans', Arial, sans-serif"><defs>
+  <marker id="open" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="12" markerHeight="12" orient="auto-start-reverse">
+    <path d="M1 1 L11 6 L1 11" fill="none" stroke="#1f2937" stroke-width="1.6"/></marker>
+  <marker id="triangle" viewBox="0 0 16 16" refX="15" refY="8" markerWidth="18" markerHeight="18" orient="auto-start-reverse">
+    <path d="M1 1 L15 8 L1 15 Z" fill="#ffffff" stroke="#1f2937" stroke-width="1.5"/></marker>
+</defs><rect width="100%" height="100%" fill="#fff"/><rect x="330" y="40" width="880" height="880" rx="14" fill="#f9fafb" stroke="#374151" stroke-width="2"/>
+<text x="770" y="78" text-anchor="middle" font-size="21" font-weight="700">Веб-приложение «SubTracker»</text>
+
+<g stroke="#1f2937" stroke-width="2.2" fill="none">
+  <circle cx="140" cy="140" r="16" fill="#ffffff"/>
+  <line x1="140" y1="156" x2="140" y2="202"/>
+  <line x1="112" y1="172" x2="168" y2="172"/>
+  <line x1="140" y1="202" x2="116" y2="238"/>
+  <line x1="140" y1="202" x2="164" y2="238"/>
+</g>
+<text x="140" y="264" text-anchor="middle" font-size="18" font-weight="700">Гость</text>
+<line x1="170" y1="180" x2="390.0" y2="150" stroke="#1f2937" stroke-width="1.8"/>
+<ellipse cx="540" cy="150" rx="150.0" ry="29.0" fill="#e1d5e7" stroke="#9673a6" stroke-width="1.8"/><text text-anchor="middle" font-size="16"><tspan x="540" y="156">Регистрация</tspan></text>
+<line x1="170" y1="180" x2="390.0" y2="230" stroke="#1f2937" stroke-width="1.8"/>
+<ellipse cx="540" cy="230" rx="150.0" ry="29.0" fill="#e1d5e7" stroke="#9673a6" stroke-width="1.8"/><text text-anchor="middle" font-size="16"><tspan x="540" y="236">Вход в систему</tspan></text>
+
+<g stroke="#1f2937" stroke-width="2.2" fill="none">
+  <circle cx="140" cy="520" r="16" fill="#ffffff"/>
+  <line x1="140" y1="536" x2="140" y2="582"/>
+  <line x1="112" y1="552" x2="168" y2="552"/>
+  <line x1="140" y1="582" x2="116" y2="618"/>
+  <line x1="140" y1="582" x2="164" y2="618"/>
+</g>
+<text x="140" y="644" text-anchor="middle" font-size="18" font-weight="700">Пользователь</text>
+<line x1="170" y1="560" x2="390.0" y2="330" stroke="#1f2937" stroke-width="1.8"/>
+<ellipse cx="540" cy="330" rx="150.0" ry="29.0" fill="#dae8fc" stroke="#6c8ebf" stroke-width="1.8"/><text text-anchor="middle" font-size="16"><tspan x="540" y="326">Управление подписками</tspan><tspan x="540" y="346">(CRUD)</tspan></text>
+<line x1="170" y1="560" x2="390.0" y2="410" stroke="#1f2937" stroke-width="1.8"/>
+<ellipse cx="540" cy="410" rx="150.0" ry="29.0" fill="#dae8fc" stroke="#6c8ebf" stroke-width="1.8"/><text text-anchor="middle" font-size="16"><tspan x="540" y="406">Изменение статуса</tspan><tspan x="540" y="426">подписки</tspan></text>
+<line x1="170" y1="560" x2="390.0" y2="490" stroke="#1f2937" stroke-width="1.8"/>
+<ellipse cx="540" cy="490" rx="150.0" ry="29.0" fill="#dae8fc" stroke="#6c8ebf" stroke-width="1.8"/><text text-anchor="middle" font-size="16"><tspan x="540" y="496">Отметка об оплате</tspan></text>
+<line x1="170" y1="560" x2="390.0" y2="570" stroke="#1f2937" stroke-width="1.8"/>
+<ellipse cx="540" cy="570" rx="150.0" ry="29.0" fill="#dae8fc" stroke="#6c8ebf" stroke-width="1.8"/><text text-anchor="middle" font-size="16"><tspan x="540" y="566">Ведение истории</tspan><tspan x="540" y="586">расходов</tspan></text>
+<line x1="170" y1="560" x2="390.0" y2="650" stroke="#1f2937" stroke-width="1.8"/>
+<ellipse cx="540" cy="650" rx="150.0" ry="29.0" fill="#dae8fc" stroke="#6c8ebf" stroke-width="1.8"/><text text-anchor="middle" font-size="16"><tspan x="540" y="646">Просмотр календаря</tspan><tspan x="540" y="666">списаний</tspan></text>
+<line x1="170" y1="560" x2="390.0" y2="730" stroke="#1f2937" stroke-width="1.8"/>
+<ellipse cx="540" cy="730" rx="150.0" ry="29.0" fill="#dae8fc" stroke="#6c8ebf" stroke-width="1.8"/><text text-anchor="middle" font-size="16"><tspan x="540" y="736">Анализ расходов</tspan></text>
+<line x1="170" y1="560" x2="390.0" y2="810" stroke="#1f2937" stroke-width="1.8"/>
+<ellipse cx="540" cy="810" rx="150.0" ry="29.0" fill="#dae8fc" stroke="#6c8ebf" stroke-width="1.8"/><text text-anchor="middle" font-size="16"><tspan x="540" y="816">Просмотр уведомлений</tspan></text>
+<line x1="170" y1="560" x2="390.0" y2="880" stroke="#1f2937" stroke-width="1.8"/>
+<ellipse cx="540" cy="880" rx="150.0" ry="29.0" fill="#dae8fc" stroke="#6c8ebf" stroke-width="1.8"/><text text-anchor="middle" font-size="16"><tspan x="540" y="876">Настройка профиля</tspan><tspan x="540" y="896">и бюджета</tspan></text>
+<ellipse cx="940" cy="690" rx="150.0" ry="29.0" fill="#fff2cc" stroke="#d6b656" stroke-width="1.8"/><text text-anchor="middle" font-size="16"><tspan x="940" y="686">Выгрузка отчёта</tspan><tspan x="940" y="706">в CSV / Excel</tspan></text>
+<line x1="798.0" y1="690" x2="686.0" y2="722" stroke="#1f2937" stroke-width="1.8" stroke-dasharray="7 5" marker-end="url(#open)"/>
+<text x="745" y="688" text-anchor="middle" font-size="14" fill="#374151">«extend»</text>
+<ellipse cx="940" cy="790" rx="150.0" ry="29.0" fill="#fff2cc" stroke="#d6b656" stroke-width="1.8"/><text text-anchor="middle" font-size="16"><tspan x="940" y="786">Пересчёт сумм</tspan><tspan x="940" y="806">по курсу валют</tspan></text>
+<line x1="686.0" y1="738" x2="798.0" y2="786" stroke="#1f2937" stroke-width="1.8" stroke-dasharray="7 5" marker-end="url(#open)"/>
+<text x="690" y="800" text-anchor="middle" font-size="14" fill="#374151">«include»</text>
+<ellipse cx="940" cy="490" rx="150.0" ry="29.0" fill="#fff2cc" stroke="#d6b656" stroke-width="1.8"/><text text-anchor="middle" font-size="16"><tspan x="940" y="486">Расчёт даты</tspan><tspan x="940" y="506">следующего списания</tspan></text>
+<line x1="690.0" y1="490" x2="788.0" y2="490" stroke="#1f2937" stroke-width="1.8" stroke-dasharray="7 5" marker-end="url(#open)"/>
+<text x="760" y="478" text-anchor="middle" font-size="14" fill="#374151">«include»</text>
+
+<g stroke="#1f2937" stroke-width="2.2" fill="none">
+  <circle cx="1360" cy="300" r="16" fill="#ffffff"/>
+  <line x1="1360" y1="316" x2="1360" y2="362"/>
+  <line x1="1332" y1="332" x2="1388" y2="332"/>
+  <line x1="1360" y1="362" x2="1336" y2="398"/>
+  <line x1="1360" y1="362" x2="1384" y2="398"/>
+</g>
+<text x="1360" y="424" text-anchor="middle" font-size="18" font-weight="700">Администратор</text>
+<line x1="1330" y1="340" x2="1200.0" y2="150" stroke="#1f2937" stroke-width="1.8"/>
+<ellipse cx="1050" cy="150" rx="150.0" ry="29.0" fill="#d5e8d4" stroke="#82b366" stroke-width="1.8"/><text text-anchor="middle" font-size="16"><tspan x="1050" y="146">Управление</tspan><tspan x="1050" y="166">пользователями и ролями</tspan></text>
+<line x1="1330" y1="340" x2="1200.0" y2="240" stroke="#1f2937" stroke-width="1.8"/>
+<ellipse cx="1050" cy="240" rx="150.0" ry="29.0" fill="#d5e8d4" stroke="#82b366" stroke-width="1.8"/><text text-anchor="middle" font-size="16"><tspan x="1050" y="246">Управление категориями</tspan></text>
+<line x1="1330" y1="340" x2="1200.0" y2="330" stroke="#1f2937" stroke-width="1.8"/>
+<ellipse cx="1050" cy="330" rx="150.0" ry="29.0" fill="#d5e8d4" stroke="#82b366" stroke-width="1.8"/><text text-anchor="middle" font-size="16"><tspan x="1050" y="326">Управление валютами</tspan><tspan x="1050" y="346">и курсами</tspan></text>
+<line x1="1330" y1="340" x2="1200.0" y2="420" stroke="#1f2937" stroke-width="1.8"/>
+<ellipse cx="1050" cy="420" rx="150.0" ry="29.0" fill="#d5e8d4" stroke="#82b366" stroke-width="1.8"/><text text-anchor="middle" font-size="16"><tspan x="1050" y="416">Просмотр статистики</tspan><tspan x="1050" y="436">системы</tspan></text>
+<path d="M1360 430 V960 H140 V654" fill="none" stroke="#1f2937" stroke-width="1.8" marker-end="url(#triangle)"/>
+<text x="770" y="985" text-anchor="middle" font-size="14" fill="#374151">администратор наследует возможности пользователя</text></svg>
