@@ -1,0 +1,63 @@
+/* Основные стили интерфейса SubTracker (дополняют Bootstrap 5) */
+:root {
+  --st-primary: #4f46e5;
+  --st-primary-soft: #eef2ff;
+  --st-bg: #f5f6fa;
+  --st-sidebar: #111827;
+  --st-border: #e5e7eb;
+}
+
+body { background: var(--st-bg); color: #1f2937; }
+a { color: var(--st-primary); }
+.btn-primary { background: var(--st-primary); border-color: var(--st-primary); }
+.btn-primary:hover { background: #4338ca; border-color: #4338ca; }
+.btn-outline-primary { color: var(--st-primary); border-color: var(--st-primary); }
+.btn-outline-primary:hover { background: var(--st-primary); border-color: var(--st-primary); }
+
+/* Каркас: боковое меню + контент */
+.app-shell { display: flex; min-height: 100vh; }
+.sidebar {
+  width: 250px; flex-shrink: 0; background: var(--st-sidebar); color: #cbd5e1;
+  flex-direction: column; padding: 1.25rem 0.75rem; min-height: 100vh;
+}
+.sidebar .brand { color: #fff; font-weight: 700; font-size: 1.3rem; text-decoration: none; padding: 0 .75rem 1.25rem; }
+.sidebar .nav-link { color: #cbd5e1; border-radius: .5rem; padding: .55rem .75rem; display: flex; align-items: center; gap: .6rem; }
+.sidebar .nav-link:hover { background: #1f2937; color: #fff; }
+.sidebar .nav-link.active { background: var(--st-primary); color: #fff; }
+.sidebar .nav-section { font-size: .75rem; text-transform: uppercase; letter-spacing: .05em; color: #6b7280; padding: 1rem .75rem .35rem; }
+.sidebar-footer { margin-top: auto; border-top: 1px solid #1f2937; padding-top: .75rem; }
+.content { flex: 1; padding: 2rem; min-width: 0; }
+
+/* Карточки */
+.card { border: 1px solid var(--st-border); border-radius: .9rem; box-shadow: 0 1px 2px rgba(0,0,0,.03); }
+.card-header { background: #fff; border-bottom: 1px solid var(--st-border); font-weight: 600; border-radius: .9rem .9rem 0 0 !important; }
+.stat-card .stat-label { color: #6b7280; font-size: .85rem; }
+.stat-card .stat-value { font-size: 1.6rem; font-weight: 700; }
+.stat-icon { width: 44px; height: 44px; border-radius: .75rem; display: inline-flex; align-items: center; justify-content: center;
+             background: var(--st-primary-soft); color: var(--st-primary); font-size: 1.25rem; }
+
+/* Логотип сервиса — первая буква в цветном кружке */
+.service-avatar { width: 38px; height: 38px; border-radius: .6rem; color: #fff; font-weight: 700;
+                  display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
+
+/* Статусы подписок */
+.badge-status-active { background: #dcfce7; color: #166534; }
+.badge-status-trial { background: #fef9c3; color: #854d0e; }
+.badge-status-paused { background: #e5e7eb; color: #374151; }
+.badge-status-cancelled { background: #fee2e2; color: #991b1b; }
+
+.table > :not(caption) > * > * { padding: .7rem .75rem; }
+.table thead th { font-size: .8rem; text-transform: uppercase; color: #6b7280; font-weight: 600; }
+
+/* Страницы входа и регистрации */
+.auth-shell { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 2rem 1rem;
+              background: linear-gradient(135deg, #eef2ff 0%, #f5f6fa 60%); }
+.auth-card { width: 100%; max-width: 440px; }
+.auth-brand { font-size: 1.6rem; font-weight: 700; color: var(--st-primary); }
+
+/* Календарь */
+.calendar-day { border-left: 4px solid var(--st-primary); }
+.notification-unread { border-left: 4px solid var(--st-primary); background: #fafaff; }
+.chart-box { position: relative; height: 300px; }
+
+@media (max-width: 991px) { .content { padding: 1rem; } }
