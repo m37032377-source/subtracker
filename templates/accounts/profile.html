@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block title %}Профиль{% endblock %}
+{% block heading %}Личный кабинет{% endblock %}
+{% block subheading %}{{ user.email }} · {{ user.get_role_display }}{% endblock %}
+{% block content %}
+<div class="row g-4">
+  <div class="col-lg-4">
+    <div class="card p-4 text-center">
+      <div class="service-avatar mx-auto mb-3" style="background:#4f46e5;width:72px;height:72px;font-size:1.8rem;border-radius:50%">{{ user.display_name|first|upper }}</div>
+      <h2 class="h5 mb-0">{{ user.display_name }}</h2>
+      <div class="text-muted mb-3">С нами с {{ user.date_joined|date:"d.m.Y" }}</div>
+      <div class="d-flex justify-content-around border-top pt-3">
+        <div><div class="fw-bold fs-5">{{ subscriptions_count }}</div><div class="text-muted small">подписок</div></div>
+        <div><div class="fw-bold fs-5">{{ month_total }}</div><div class="text-muted small">в месяц{% if user.default_currency %}, {{ user.default_currency.symbol }}{% endif %}</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-8">
+    <div class="card mb-4">
+      <div class="card-header">Настройки профиля</div>
+      <div class="card-body">
+        <form method="post">{% csrf_token %}
+          <div class="row">
+            {% for field in profile_form %}<div class="col-md-6">{% include 'includes/form_field.html' %}</div>{% endfor %}
+          </div>
+          <button class="btn btn-primary" name="save_profile">Сохранить</button>
+        </form>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">Смена пароля</div>
+      <div class="card-body">
+        <form method="post">{% csrf_token %}
+          {% for field in password_form %}{% include 'includes/form_field.html' %}{% endfor %}
+          <button class="btn btn-outline-primary" name="change_password">Изменить пароль</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block title %}Регистрация{% endblock %}
+{% block auth_content %}
+<div class="auth-card" style="max-width: 520px">
+  <div class="text-center mb-4">
+    <div class="auth-brand"><i class="bi bi-wallet2"></i> SubTracker</div>
+    <div class="text-muted">Создайте аккаунт, чтобы держать подписки под контролем</div>
+  </div>
+  <div class="card p-4">
+    <h1 class="h4 mb-3">Регистрация</h1>
+    <form method="post" novalidate>
+      {% csrf_token %}
+      {% if form.non_field_errors %}<div class="alert alert-danger">{{ form.non_field_errors|join:" " }}</div>{% endif %}
+      <div class="row">
+        <div class="col-md-6">{% include 'includes/form_field.html' with field=form.first_name %}</div>
+        <div class="col-md-6">{% include 'includes/form_field.html' with field=form.last_name %}</div>
+      </div>
+      {% include 'includes/form_field.html' with field=form.email %}
+      {% include 'includes/form_field.html' with field=form.default_currency %}
+      {% include 'includes/form_field.html' with field=form.password1 %}
+      {% include 'includes/form_field.html' with field=form.password2 %}
+      <button class="btn btn-primary w-100">Создать аккаунт</button>
+    </form>
+    <div class="text-center mt-3">Уже зарегистрированы? <a href="{% url 'accounts:login' %}">Войти</a></div>
+  </div>
+</div>
+{% endblock %}

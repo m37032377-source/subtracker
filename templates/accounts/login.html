@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}Вход{% endblock %}
+{% block auth_content %}
+<div class="auth-card">
+  <div class="text-center mb-4">
+    <div class="auth-brand"><i class="bi bi-wallet2"></i> SubTracker</div>
+    <div class="text-muted">Управление цифровыми подписками и расходами</div>
+  </div>
+  <div class="card p-4">
+    <h1 class="h4 mb-3">Вход в систему</h1>
+    <form method="post" novalidate>
+      {% csrf_token %}
+      {% if form.non_field_errors %}<div class="alert alert-danger">{{ form.non_field_errors|join:" " }}</div>{% endif %}
+      {% for field in form %}{% include 'includes/form_field.html' %}{% endfor %}
+      <input type="hidden" name="next" value="{{ next }}">
+      <button class="btn btn-primary w-100">Войти</button>
+    </form>
+    <div class="text-center mt-3">Нет аккаунта? <a href="{% url 'accounts:register' %}">Зарегистрироваться</a></div>
+  </div>
+</div>
+{% endblock %}
