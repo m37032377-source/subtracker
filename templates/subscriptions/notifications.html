@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}Уведомления{% endblock %}
+{% block heading %}Уведомления{% endblock %}
+{% block subheading %}Непрочитанных: {{ unread_notifications }}{% endblock %}
+{% block actions %}{% if unread_notifications %}
+<form method="post" action="{% url 'subscriptions:notification_read_all' %}">{% csrf_token %}<button class="btn btn-outline-primary"><i class="bi bi-check2-all"></i> Прочитать все</button></form>
+{% endif %}{% endblock %}
+{% block content %}
+<div class="card"><ul class="list-group list-group-flush">
+{% for n in notifications %}
+  <li class="list-group-item py-3 d-flex gap-3 {% if not n.is_read %}notification-unread{% endif %}">
+    <span class="stat-icon flex-shrink-0">
+      {% if n.notification_type == 'upcoming' %}<i class="bi bi-clock"></i>{% elif n.notification_type == 'trial_end' %}<i class="bi bi-hourglass-split"></i>{% elif n.notification_type == 'budget' %}<i class="bi bi-exclamation-triangle"></i>{% else %}<i class="bi bi-credit-card"></i>{% endif %}
+    </span>
+    <div class="flex-grow-1">
+      <div class="fw-semibold">{{ n.title }}</div>
+      <div>{{ n.message }}</div>
+      <div class="small text-muted">{{ n.get_notification_type_display }} · {{ n.created_at|date:"d.m.Y H:i" }}{% if n.subscription %} · <a href="{{ n.subscription.get_absolute_url }}">к подписке</a>{% endif %}</div>
+    </div>
+    {% if not n.is_read %}
+    <form method="post" action="{% url 'subscriptions:notification_read' n.pk %}">{% csrf_token %}<button class="btn btn-sm btn-outline-secondary" title="Прочитано"><i class="bi bi-check2"></i></button></form>
+    {% endif %}
+  </li>
+{% empty %}
+  <li class="list-group-item text-center text-muted py-5">Уведомлений нет</li>
+{% endfor %}
+</ul></div>
+{% endblock %}

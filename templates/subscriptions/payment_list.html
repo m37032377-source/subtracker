@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load money %}
+{% block title %}История расходов{% endblock %}
+{% block heading %}История расходов{% endblock %}
+{% block subheading %}Оплачено по выбранным записям: {{ total_rub|money }} ₽{% endblock %}
+{% block actions %}<a class="btn btn-primary" href="{% url 'subscriptions:payment_create' %}"><i class="bi bi-plus-lg"></i> Добавить платёж</a>{% endblock %}
+{% block content %}
+<form method="get" class="card p-3 mb-4"><div class="row g-2 align-items-end">
+  <div class="col-md-5"><label class="form-label">Подписка</label>
+    <select name="subscription" class="form-select"><option value="">Все подписки</option>
+      {% for s in subscriptions %}<option value="{{ s.pk }}" {% if selected == s.pk|stringformat:"s" %}selected{% endif %}>{{ s.name }}</option>{% endfor %}
+    </select></div>
+  <div class="col-md-2 d-grid"><button class="btn btn-outline-primary">Показать</button></div>
+</div></form>
+<div class="card"><div class="table-responsive">
+  <table class="table align-middle mb-0">
+    <thead><tr><th>Дата</th><th>Подписка</th><th>Категория</th><th>Сумма</th><th>В рублях</th><th>Статус</th><th>Комментарий</th><th></th></tr></thead>
+    <tbody>
+    {% for p in page_obj %}
+      <tr>
+        <td>{{ p.paid_at|date:"d.m.Y" }}</td>
+        <td><a href="{{ p.subscription.get_absolute_url }}" class="text-decoration-none">{{ p.subscription.name }}</a></td>
+        <td>{{ p.subscription.category.name }}</td>
+        <td class="fw-semibold">{{ p.amount }} {{ p.currency.symbol }}</td>
+        <td>{{ p.amount_rub }} ₽</td>
+        <td>{{ p.get_status_display }}</td>
+        <td class="small text-muted">{{ p.comment }}</td>
+        <td class="text-end text-nowrap">
+          <a class="btn btn-sm btn-outline-secondary" href="{% url 'subscriptions:payment_update' p.pk %}"><i class="bi bi-pencil"></i></a>
+          <form method="post" action="{% url 'subscriptions:payment_delete' p.pk %}" class="d-inline" onsubmit="return confirm('Удалить платёж?')">{% csrf_token %}
+            <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button></form>
+        </td>
+      </tr>
+    {% empty %}
+      <tr><td colspan="8" class="text-center text-muted py-5">Платежей нет</td></tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div></div>
+{% include 'includes/pagination.html' %}
+{% endblock %}

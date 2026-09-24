@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load money %}
+{% block title %}Главная{% endblock %}
+{% block heading %}Здравствуйте, {{ user.first_name|default:user.email }}!{% endblock %}
+{% block subheading %}Сводка по вашим подпискам и расходам{% endblock %}
+{% block actions %}<a class="btn btn-primary" href="{% url 'subscriptions:create' %}"><i class="bi bi-plus-lg"></i> Добавить подписку</a>{% endblock %}
+{% block content %}
+<div class="row g-3 mb-4">
+  <div class="col-sm-6 col-xl-3"><div class="card stat-card p-3 h-100"><div class="d-flex justify-content-between">
+    <div><div class="stat-label">Активных подписок</div><div class="stat-value">{{ active_count }}</div>
+      <div class="small text-muted">из них на пробном периоде: {{ trial_count }}</div></div>
+    <span class="stat-icon"><i class="bi bi-collection"></i></span></div></div></div>
+  <div class="col-sm-6 col-xl-3"><div class="card stat-card p-3 h-100"><div class="d-flex justify-content-between">
+    <div><div class="stat-label">Расходы в месяц</div><div class="stat-value">{{ month_total|money }} {{ currency.symbol }}</div>
+      <div class="small text-muted">плановая нагрузка</div></div>
+    <span class="stat-icon"><i class="bi bi-calendar-month"></i></span></div></div></div>
+  <div class="col-sm-6 col-xl-3"><div class="card stat-card p-3 h-100"><div class="d-flex justify-content-between">
+    <div><div class="stat-label">Расходы в год</div><div class="stat-value">{{ year_total|money }} {{ currency.symbol }}</div>
+      <div class="small text-muted">при текущем наборе подписок</div></div>
+    <span class="stat-icon"><i class="bi bi-graph-up"></i></span></div></div></div>
+  <div class="col-sm-6 col-xl-3"><div class="card stat-card p-3 h-100"><div class="d-flex justify-content-between">
+    <div><div class="stat-label">Списано в этом месяце</div><div class="stat-value">{{ spent_this_month|money }} ₽</div>
+      <div class="small text-muted">по истории платежей</div></div>
+    <span class="stat-icon"><i class="bi bi-receipt"></i></span></div></div></div>
+</div>
+
+{% if budget_percent is not None %}
+<div class="card p-3 mb-4">
+  <div class="d-flex justify-content-between mb-2"><span class="fw-semibold">Месячный бюджет на подписки</span>
+    <span>{{ month_total|money }} из {{ user.monthly_budget|money }} {{ currency.symbol }}</span></div>
+  <div class="progress" style="height: 10px"><div class="progress-bar {% if budget_percent >= 100 %}bg-danger{% elif budget_percent >= 80 %}bg-warning{% endif %}" style="width: {{ budget_percent }}%"></div></div>
+</div>
+{% endif %}
+
+<div class="row g-4">
+  <div class="col-lg-7">
+    <div class="card h-100">
+      <div class="card-header d-flex justify-content-between">Ближайшие списания (14 дней) <a href="{% url 'subscriptions:calendar' %}" class="small">Календарь</a></div>
+      <ul class="list-group list-group-flush">
+        {% for sub in upcoming %}
+        <li class="list-group-item d-flex align-items-center gap-3 py-3">
+          {% include 'includes/service_avatar.html' %}
+          <div class="flex-grow-1"><a href="{{ sub.get_absolute_url }}" class="fw-semibold text-decoration-none text-dark">{{ sub.name }}</a>
+            <div class="small text-muted">{{ sub.category.name }} · {{ sub.get_billing_period_display }}</div></div>
+          <div class="text-end"><div class="fw-semibold">{{ sub.price }} {{ sub.currency.symbol }}</div>
+            <div class="small {% if sub.days_until_payment <= 3 %}text-danger{% else %}text-muted{% endif %}">{{ sub.next_payment_date|date:"d.m.Y" }}{% if sub.days_until_payment == 0 %} · сегодня{% else %} · через {{ sub.days_until_payment }} дн.{% endif %}</div></div>
+        </li>
+        {% empty %}
+        <li class="list-group-item text-muted py-4 text-center">В ближайшие две недели списаний нет</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+  <div class="col-lg-5">
+    <div class="card h-100">
+      <div class="card-header d-flex justify-content-between">Последние платежи <a href="{% url 'subscriptions:payments' %}" class="small">Вся история</a></div>
+      <ul class="list-group list-group-flush">
+        {% for p in recent_payments %}
+        <li class="list-group-item d-flex justify-content-between py-3">
+          <div><div class="fw-semibold">{{ p.subscription.name }}</div><div class="small text-muted">{{ p.paid_at|date:"d.m.Y" }} · {{ p.get_status_display }}</div></div>
+          <div class="fw-semibold">−{{ p.amount }} {{ p.currency.symbol }}</div>
+        </li>
+        {% empty %}
+        <li class="list-group-item text-muted py-4 text-center">Платежей пока нет</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>
+{% endblock %}

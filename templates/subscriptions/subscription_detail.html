@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% block title %}{{ subscription.name }}{% endblock %}
+{% block heading %}{{ subscription.name }}{% endblock %}
+{% block subheading %}{{ subscription.category.name }} · добавлена {{ subscription.created_at|date:"d.m.Y" }}{% endblock %}
+{% block actions %}
+  <a class="btn btn-outline-secondary" href="{% url 'subscriptions:update' subscription.pk %}"><i class="bi bi-pencil"></i> Изменить</a>
+  <a class="btn btn-outline-danger" href="{% url 'subscriptions:delete' subscription.pk %}"><i class="bi bi-trash"></i> Удалить</a>
+{% endblock %}
+{% block content %}
+{% with sub=subscription %}
+<div class="row g-4">
+  <div class="col-lg-5">
+    <div class="card p-4 mb-4">
+      <div class="d-flex align-items-center gap-3 mb-3">{% include 'includes/service_avatar.html' %}
+        <div><div class="fs-4 fw-bold">{{ sub.price }} {{ sub.currency.symbol }}</div><div class="text-muted">{{ sub.get_billing_period_display|lower }}</div></div>
+        <span class="badge badge-status-{{ sub.status }} ms-auto">{{ sub.get_status_display }}</span></div>
+      <dl class="row mb-0">
+        <dt class="col-6 fw-normal text-muted">В месяц</dt><dd class="col-6">{{ sub.monthly_cost }} {{ sub.currency.symbol }}</dd>
+        <dt class="col-6 fw-normal text-muted">В год</dt><dd class="col-6">{{ sub.yearly_cost }} {{ sub.currency.symbol }}</dd>
+        <dt class="col-6 fw-normal text-muted">Дата начала</dt><dd class="col-6">{{ sub.start_date|date:"d.m.Y" }}</dd>
+        <dt class="col-6 fw-normal text-muted">Следующее списание</dt><dd class="col-6">{{ sub.next_payment_date|date:"d.m.Y" }}</dd>
+        {% if sub.trial_end_date %}<dt class="col-6 fw-normal text-muted">Конец пробного периода</dt><dd class="col-6">{{ sub.trial_end_date|date:"d.m.Y" }}</dd>{% endif %}
+        <dt class="col-6 fw-normal text-muted">Напоминание</dt><dd class="col-6">за {{ sub.remind_days_before }} дн.</dd>
+        <dt class="col-6 fw-normal text-muted">Всего оплачено</dt><dd class="col-6">{{ total_paid }} {{ sub.currency.symbol }}</dd>
+        {% if sub.website %}<dt class="col-6 fw-normal text-muted">Сайт</dt><dd class="col-6"><a href="{{ sub.website }}" target="_blank" rel="noopener">перейти</a></dd>{% endif %}
+      </dl>
+      {% if sub.notes %}<div class="border-top pt-3 mt-2 text-muted">{{ sub.notes|linebreaksbr }}</div>{% endif %}
+    </div>
+    <div class="card p-3">
+      <div class="fw-semibold mb-2">Управление подпиской</div>
+      <div class="d-flex flex-wrap gap-2">
+        {% if sub.is_billable %}
+        <form method="post" action="{% url 'subscriptions:pay_now' sub.pk %}">{% csrf_token %}<button class="btn btn-sm btn-primary"><i class="bi bi-check2-circle"></i> Отметить оплату</button></form>
+        {% endif %}
+        {% if sub.status == 'active' %}
+        <form method="post" action="{% url 'subscriptions:change_status' sub.pk 'paused' %}">{% csrf_token %}<button class="btn btn-sm btn-outline-secondary"><i class="bi bi-pause-circle"></i> Приостановить</button></form>
+        {% endif %}
+        {% if sub.status == 'trial' or sub.status == 'paused' or sub.status == 'cancelled' %}
+        <form method="post" action="{% url 'subscriptions:change_status' sub.pk 'active' %}">{% csrf_token %}<button class="btn btn-sm btn-outline-success"><i class="bi bi-play-circle"></i> Активировать</button></form>
+        {% endif %}
+        {% if sub.status != 'cancelled' %}
+        <form method="post" action="{% url 'subscriptions:change_status' sub.pk 'cancelled' %}">{% csrf_token %}<button class="btn btn-sm btn-outline-danger"><i class="bi bi-x-circle"></i> Отменить</button></form>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  <div class="col-lg-7">
+    <div class="card">
+      <div class="card-header d-flex justify-content-between align-items-center">История платежей
+        <a class="btn btn-sm btn-outline-primary" href="{% url 'subscriptions:payment_create' %}?subscription={{ sub.pk }}"><i class="bi bi-plus"></i> Платёж</a></div>
+      <table class="table mb-0">
+        <thead><tr><th>Дата</th><th>Сумма</th><th>В рублях</th><th>Статус</th></tr></thead>
+        <tbody>
+        {% for p in payments %}
+          <tr><td>{{ p.paid_at|date:"d.m.Y" }}</td><td>{{ p.amount }} {{ p.currency.symbol }}</td><td>{{ p.amount_rub }} ₽</td><td>{{ p.get_status_display }}</td></tr>
+        {% empty %}
+          <tr><td colspan="4" class="text-center text-muted py-4">Платежей пока нет</td></tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+{% endwith %}
+{% endblock %}

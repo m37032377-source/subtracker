@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block title %}Подписки{% endblock %}
+{% block heading %}Мои подписки{% endblock %}
+{% block subheading %}Найдено: {{ total_found }}{% endblock %}
+{% block actions %}<a class="btn btn-primary" href="{% url 'subscriptions:create' %}"><i class="bi bi-plus-lg"></i> Добавить</a>{% endblock %}
+{% block content %}
+<form method="get" class="card p-3 mb-4">
+  <div class="row g-2 align-items-end">
+    <div class="col-md-3">{{ form.q.label_tag }} {{ form.q }}</div>
+    <div class="col-md-2">{{ form.category.label_tag }} {{ form.category }}</div>
+    <div class="col-md-2">{{ form.status.label_tag }} {{ form.status }}</div>
+    <div class="col-md-2">{{ form.period.label_tag }} {{ form.period }}</div>
+    <div class="col-md-2">{{ form.sort.label_tag }} {{ form.sort }}</div>
+    <div class="col-md-1 d-grid"><button class="btn btn-outline-primary"><i class="bi bi-funnel"></i></button></div>
+  </div>
+</form>
+<div class="card">
+  <div class="table-responsive">
+    <table class="table align-middle mb-0">
+      <thead><tr><th>Сервис</th><th>Категория</th><th>Стоимость</th><th>Период</th><th>Следующее списание</th><th>Статус</th><th></th></tr></thead>
+      <tbody>
+      {% for sub in page_obj %}
+        <tr>
+          <td><div class="d-flex align-items-center gap-2">{% include 'includes/service_avatar.html' %}<a class="fw-semibold text-decoration-none text-dark" href="{{ sub.get_absolute_url }}">{{ sub.name }}</a></div></td>
+          <td>{{ sub.category.name }}</td>
+          <td class="fw-semibold">{{ sub.price }} {{ sub.currency.symbol }}</td>
+          <td>{{ sub.get_billing_period_display }}</td>
+          <td>{{ sub.next_payment_date|date:"d.m.Y" }}</td>
+          <td><span class="badge badge-status-{{ sub.status }}">{{ sub.get_status_display }}</span></td>
+          <td class="text-end text-nowrap">
+            <a class="btn btn-sm btn-outline-secondary" href="{% url 'subscriptions:update' sub.pk %}" title="Изменить"><i class="bi bi-pencil"></i></a>
+            <a class="btn btn-sm btn-outline-danger" href="{% url 'subscriptions:delete' sub.pk %}" title="Удалить"><i class="bi bi-trash"></i></a>
+          </td>
+        </tr>
+      {% empty %}
+        <tr><td colspan="7" class="text-center text-muted py-5">Подписок не найдено</td></tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% include 'includes/pagination.html' %}
+{% endblock %}

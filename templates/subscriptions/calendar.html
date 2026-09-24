@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block title %}Календарь списаний{% endblock %}
+{% block heading %}Календарь списаний{% endblock %}
+{% block subheading %}С {{ today|date:"d.m.Y" }} по {{ horizon|date:"d.m.Y" }}{% endblock %}
+{% block content %}
+{% for day, subs in grouped %}
+<div class="card calendar-day mb-3">
+  <div class="card-body py-3">
+    <div class="d-flex justify-content-between mb-2"><span class="fw-semibold">{{ day|date:"j E, l" }}</span>
+      {% if day == today %}<span class="badge bg-primary">сегодня</span>{% endif %}</div>
+    {% for sub in subs %}
+    <div class="d-flex align-items-center gap-3 py-1">{% include 'includes/service_avatar.html' %}
+      <a class="flex-grow-1 text-decoration-none text-dark" href="{{ sub.get_absolute_url }}">{{ sub.name }}{% if sub.status == 'trial' %} <span class="badge badge-status-trial">пробный</span>{% endif %}</a>
+      <span class="fw-semibold">{{ sub.price }} {{ sub.currency.symbol }}</span></div>
+    {% endfor %}
+  </div>
+</div>
+{% empty %}
+<div class="card p-5 text-center text-muted">В ближайшие 30 дней списаний не запланировано</div>
+{% endfor %}
+{% endblock %}
