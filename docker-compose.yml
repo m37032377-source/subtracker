@@ -1,0 +1,36 @@
+services:
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_DATABASE: subtracker
+      MYSQL_USER: subtracker
+      MYSQL_PASSWORD: subtracker
+      MYSQL_ROOT_PASSWORD: rootpassword
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    volumes:
+      - mysql_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 5s
+      retries: 20
+
+  web:
+    build: .
+    environment:
+      DJANGO_DEBUG: "0"
+      DJANGO_SECRET_KEY: docker-local-secret
+      DJANGO_ALLOWED_HOSTS: 127.0.0.1,localhost
+      DJANGO_USE_SQLITE: "0"
+      MYSQL_DATABASE: subtracker
+      MYSQL_USER: subtracker
+      MYSQL_PASSWORD: subtracker
+      MYSQL_HOST: db
+      MYSQL_PORT: "3306"
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  mysql_data:
