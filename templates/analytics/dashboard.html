@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static money %}
+{% block title %}Аналитика{% endblock %}
+{% block heading %}Аналитика расходов{% endblock %}
+{% block subheading %}Период: {{ period.date_from|date:"d.m.Y" }} — {{ period.date_to|date:"d.m.Y" }}{% endblock %}
+{% block actions %}
+  <a class="btn btn-outline-success" href="{% url 'analytics:export_xlsx' %}?from={{ period.date_from|date:'Y-m-d' }}&to={{ period.date_to|date:'Y-m-d' }}"><i class="bi bi-file-earmark-excel"></i> Excel</a>
+  <a class="btn btn-outline-secondary" href="{% url 'analytics:export_csv' %}?from={{ period.date_from|date:'Y-m-d' }}&to={{ period.date_to|date:'Y-m-d' }}"><i class="bi bi-filetype-csv"></i> CSV</a>
+{% endblock %}
+{% block content %}
+<form method="get" class="card p-3 mb-4"><div class="row g-2 align-items-end">
+  <div class="col-md-3"><label class="form-label">С</label><input type="date" name="from" class="form-control" value="{{ period.date_from|date:'Y-m-d' }}"></div>
+  <div class="col-md-3"><label class="form-label">По</label><input type="date" name="to" class="form-control" value="{{ period.date_to|date:'Y-m-d' }}"></div>
+  <div class="col-md-2 d-grid"><button class="btn btn-primary">Применить</button></div>
+</div></form>
+
+{% with c=summary.currency %}
+<div class="row g-3 mb-4">
+  <div class="col-md-3"><div class="card stat-card p-3 h-100"><div class="stat-label">Потрачено за период</div><div class="stat-value">{{ summary.total|money }} {{ c.symbol }}</div></div></div>
+  <div class="col-md-3"><div class="card stat-card p-3 h-100"><div class="stat-label">В среднем в месяц</div><div class="stat-value">{{ summary.avg_per_month|money }} {{ c.symbol }}</div></div></div>
+  <div class="col-md-3"><div class="card stat-card p-3 h-100"><div class="stat-label">Количество списаний</div><div class="stat-value">{{ summary.payments_count }}</div></div></div>
+  <div class="col-md-3"><div class="card stat-card p-3 h-100"><div class="stat-label">К предыдущему периоду</div>
+    <div class="stat-value {% if summary.change_percent > 0 %}text-danger{% elif summary.change_percent is not None %}text-success{% endif %}">
+      {% if summary.change_percent is None %}—{% else %}{% if summary.change_percent > 0 %}+{% endif %}{{ summary.change_percent }}%{% endif %}</div>
+    <div class="small text-muted">было {{ summary.prev_total|money }} {{ c.symbol }}</div></div></div>
+</div>
+
+<div class="row g-4 mb-4">
+  <div class="col-lg-8"><div class="card h-100"><div class="card-header">Динамика расходов по месяцам</div>
+    <div class="card-body"><div class="chart-box"><canvas id="monthsChart"></canvas></div></div></div></div>
+  <div class="col-lg-4"><div class="card h-100"><div class="card-header">Структура по категориям</div>
+    <div class="card-body"><div class="chart-box"><canvas id="categoriesChart"></canvas></div></div></div></div>
+</div>
+
+<div class="row g-4">
+  <div class="col-lg-7"><div class="card h-100"><div class="card-header">Самые затратные подписки за период</div>
+    <table class="table mb-0"><thead><tr><th>#</th><th>Подписка</th><th>Категория</th><th>Списаний</th><th class="text-end">Сумма</th></tr></thead><tbody>
+    {% for t in top %}<tr><td>{{ forloop.counter }}</td><td><a href="{% url 'subscriptions:detail' t.id %}">{{ t.name }}</a></td><td>{{ t.category }}</td><td>{{ t.count }}</td><td class="text-end fw-semibold text-nowrap">{{ t.total|money }} {{ c.symbol }}</td></tr>
+    {% empty %}<tr><td colspan="5" class="text-center text-muted py-4">Нет данных за период</td></tr>{% endfor %}
+    </tbody></table></div></div>
+  <div class="col-lg-5"><div class="card h-100"><div class="card-header">Плановая нагрузка в месяц по категориям</div>
+    <ul class="list-group list-group-flush">
+    {% for p in planned %}<li class="list-group-item d-flex justify-content-between"><span>{{ p.name }}</span><span class="fw-semibold">{{ p.total|money }} {{ c.symbol }}</span></li>
+    {% empty %}<li class="list-group-item text-muted text-center py-4">Нет активных подписок</li>{% endfor %}
+    </ul></div></div>
+</div>
+{% endwith %}
+{{ chart_data|json_script:"chart-data" }}
+{% endblock %}
+{% block scripts %}
+<script src="{% static 'vendor/chartjs/chart.umd.min.js' %}"></script>
+<script src="{% static 'js/analytics.js' %}"></script>
+{% endblock %}
